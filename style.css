@@ -1,0 +1,17 @@
+img{
+	height: 40px;
+}
+
+.list-group{
+	margin-bottom: 0px;
+}
+
+.list-group-item{
+	height: 60px;
+	text-align: center;
+}
+
+.navbar-brand .titulo {
+	display: inline-block;
+	vertical-align: center;
+}
