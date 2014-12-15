@@ -42,7 +42,7 @@ function getFile(filePath,res,page404){
 //a helper function to handle HTTP requests
 function requestHandler(req, res) {
 	var
-	fileName = path.basename(req.url) || 'index.html',
+	fileName = path.basename(req.url) || 'Index.html',
 	localFolder = __dirname + '/public/',
 	page404 = localFolder + '404.html';
  
