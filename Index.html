@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<!-- Directiva ng-app -->
+<html ng-app="expensesApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,18 +14,19 @@
     <script src="js/app.js"></script>
 
 </head>
-
-<body>
+<!-- El controlador abarca todo el cuerpo del html -->
+<body ng-controller="HomeViewController">
 	<nav class="navbar navbar-default navbar-fix-top" role="navigation">
 	  <div class="container">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">
-	        <img class="linea" alt="Brand" src="img/logo.png"><p id="titulo" class="linea">Expenses Tracker</p>
+	        <img class="linea" alt="Brand" src="img/logo.png"><p id="titulo" class="linea">{{appTitle}}</p>
 	      </a>
 	    </div>
 	  </div>
 	</nav>
-	<div class="container">
+	<!-- Inicializacion del controlador de listado de elementos -->
+	<div class="container" ng-controller="ExpensesViewController">
 		<div class="row">
 			<div class="col-xs-12">
 				<ul class="list-group">
