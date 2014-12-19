@@ -30,87 +30,16 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
+					<li ng-repeat="expense in expenses" class="list-group-item">
+						<span class="pull-left">${{expense.amount}}</span>{{expense.description}}
+						<span>
 							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
 								<span class="glyphicon glyphicon-trash"></span>
 							</button>
 							<a href="" class="boton btn btn-primary btn-s pull-right">
 								<span class="glyphicon glyphicon-pencil"></span>
 							</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
-							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-							<a href="" class="boton btn btn-primary btn-s pull-right">
-								<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
-							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-							<a href="" class="boton btn btn-primary btn-s pull-right">
-								<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
-							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-							<a href="" class="boton btn btn-primary btn-s pull-right">
-								<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
-							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-							<a href="" class="boton btn btn-primary btn-s pull-right">
-								<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-						</div>
-					</li>
-				</ul>
-				<ul class="list-group">
-					<li class="list-group-item ">
-						<div class="pull-left linea">$20</div>
-						<div class="linea text-centetr">Food</div>
-						<div class="pull-right linea">
-							<button type="button" class="boton btn btn-danger btn-s pull-right btn-separation-left">
-								<span class="glyphicon glyphicon-trash"></span>
-							</button>
-							<a href="" class="boton btn btn-primary btn-s pull-right">
-								<span class="glyphicon glyphicon-pencil"></span>
-							</a>
-						</div>
+						</span>
 					</li>
 				</ul>
 			</div>
