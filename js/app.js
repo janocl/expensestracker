@@ -1,9 +1,11 @@
 // Nuevo modulo
 var app = angular.module('expensesApp', ['ngRoute']);
+
 // Controlador principal y le pasamos el ambito $scope
 app.controller('HomeViewController', ['$scope', function($scope){
 	$scope.appTitle = 'Expenses Tracker';
 }]);
+
 // Controlador donde esta el listado de elementos y se define un arreglo expenses
 app.controller('ExpensesViewController', ['$scope', function($scope){
 	$scope.expenses = [
@@ -20,7 +22,9 @@ app.controller('ExpenseViewController', ['$scope', function($scope){
 	$scope.someText = 'The world is round';
 }]);
 
-app.config(function($routeProvider){
+app.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', { templateUrl: 'views/expenses.html', controller: 'ExpensesViewController' })
-});
+		.when('/expenses', { templateUrl: 'views/expenses.html', controller: 'ExpensesViewController' })
+		.otherwise({redirectTo: '/'});
+}]);
