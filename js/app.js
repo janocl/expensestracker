@@ -14,4 +14,13 @@ app.controller('ExpensesViewController', ['$scope', function($scope){
 		{description: 'bills', amount: 14, date: '2014-12-05'},
 		{description: 'food', amount: 15, date: '2014-12-06'},
 	]
-}])
+}]);
+
+app.controller('ExpenseViewController', ['$scope', function($scope){
+	$scope.someText = 'The world is round';
+}]);
+
+app.config(function($routeProvider){
+	$routeProvider
+		.when('/', { templateUrl: 'views/expenses.html', controller: 'ExpensesViewController' })
+});
