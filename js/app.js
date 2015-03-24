@@ -1,5 +1,5 @@
 // Nuevo modulo
-var app = angular.module('expensesApp', [])
+var app = angular.module('expensesApp', ['ngRoute']);
 // Controlador principal y le pasamos el ambito $scope
 app.controller('HomeViewController', ['$scope', function($scope){
 	$scope.appTitle = 'Expenses Tracker';
