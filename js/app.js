@@ -6,21 +6,28 @@ app.controller('HomeViewController', ['$scope', function($scope){
 	$scope.appTitle = 'Expenses Tracker';
 }]);
 
-// Controlador donde esta el listado de elementos y se define un arreglo expenses
-app.controller('ExpensesViewController', ['$scope', 'Expenses',function($scope, Expenses){
-	$scope.expenses = Expenses.entries;
-}]);
-
-app.controller('ExpenseViewController', ['$scope', function($scope){
-	$scope.someText = 'The world is round';
-}]);
-
+//Define las rutas para la app, y cada ruta define un template y un controlador.
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider
-		.when('/', { templateUrl: 'views/expenses.html', controller: 'ExpensesViewController' })
-		.when('/expenses', { templateUrl: 'views/expenses.html', controller: 'ExpensesViewController' })
-		.when('/expenses/new', { templateUrl: 'views/form.html', controller: 'ExpensesViewController' })
-		.otherwise({redirectTo: '/'});
+		.when('/', {
+			templateUrl : 'views/expenses.html',
+			controller  : 'ExpensesViewController'
+			})
+		.when('/expenses', {
+			templateUrl : 'views/expenses.html',
+			controller  : 'ExpensesViewController'
+			})
+		.when('/expenses/new', {
+			templateUrl : 'views/expenseForm.html',
+			controller  : 'ExpensesViewController'
+			})
+		.when('/expenses/edit/:id', {
+			templateUrl : 'views/expenseForm.html',
+			controller  : 'ExpenseViewController'
+			})
+		.otherwise({
+			redirectTo: '/'
+			});
 }]);
 
 //Servicio
@@ -39,3 +46,15 @@ app.factory('Expenses', function(){
 
 	return service;
 })
+
+// Controlador donde esta el listado de elementos y se define un arreglo expenses
+app.controller('ExpensesViewController', ['$scope', 'Expenses', function($scope, Expenses){
+	$scope.expenses = Expenses.entries;
+}]);
+
+app.controller('ExpenseViewController', ['$scope', '$routeParams', '$location','Expenses', function($scope, $routeParams, $location, Expenses){
+	//Si no viene un parametro 'id'
+	if (!$routeParams.id) {
+		$scope.expense = {id: 7, description: 'something', amount: 20, date: new Date()};
+	}
+}]);
