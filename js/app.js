@@ -63,6 +63,12 @@ app.factory('Expenses', function(){
     element.date = myHelpers.stringToDateObj(element.date);
   	});
 
+  	service.getNewId = function(){
+  		if (service.getNewId) {
+  			service.newId++;
+  		};
+  	}
+
 	service.save = function(entry) {
 		service.entries.push(entry);
 	}
