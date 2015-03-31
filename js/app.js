@@ -59,6 +59,10 @@ app.factory('Expenses', function(){
 		{id:6, description: 'food', amount: 15, date: '2014-12-06'},
 	];
 
+  	service.entries.forEach(function(element){
+    element.date = myHelpers.stringToDateObj(element.date);
+  	});
+
 	service.save = function(entry) {
 		service.entries.push(entry);
 	}
